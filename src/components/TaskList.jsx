@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux";
 import Task from "./Task";
+import { selectTask } from "../redux/selectors";
 
 export default function TaskList() {
-    const exampleTasks = useSelector((state) => state.task);
+    const exampleTasks = useSelector(selectTask);
 
     return (
         <div>
