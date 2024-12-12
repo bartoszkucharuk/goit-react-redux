@@ -1,9 +1,10 @@
 import { useSelector } from 'react-redux'
 import Task from './Task';
+import { selectTasks } from '../redux/selectors';
 
 export default function TaskList() {
 
-    const initialTasks = useSelector((state) => state.tasks); // state.nameInsideInitialState inside taskReducer.js
+    const initialTasks = useSelector(selectTasks); 
 
     return (
         <div>

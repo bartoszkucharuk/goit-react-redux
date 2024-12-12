@@ -7,8 +7,7 @@ import { v4 as uuidv4 } from "uuid";
 //     },
 // }
 
-
-export const saveTask = (text) => ({
+export const saveTask = (text) => ({ // round bracket due to export this const
     type: "SAVE_TASK",
     payload: {
         id: uuidv4(),

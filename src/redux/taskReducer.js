@@ -10,6 +10,14 @@ const initialState = {
 
 
 export const taskReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "SAVE_TASK":
+      return {
+        tasks: [...state.tasks, action.payload],
+      };
+    default:
+      return state;
+  }
 
-  return state;
+ 
 };
