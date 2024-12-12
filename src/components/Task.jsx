@@ -6,7 +6,7 @@ export default function Task({task}) {
         display: "flex",
       }}>
       <input type="checkbox" checked={task.completed} />
-      <p>{task.id} {task.text}</p>
+      <p>{task.text}</p>
       <button>remove</button>
     </div>
   )
