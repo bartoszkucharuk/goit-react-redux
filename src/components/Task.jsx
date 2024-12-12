@@ -1,9 +1,10 @@
-export default function Task({ task }) {
+
+export default function Task({task}) {
   return (
     <div>
       <input type="checkbox" />
-      <p>{task.text}</p>
-      <button>Remove</button>
+      <p>{task.id} {task.text}</p>
+      <button>remove</button>
     </div>
   )
 }
