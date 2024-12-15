@@ -1,3 +1,6 @@
+import { SAVE_TASK } from "./actions";
+
+
 const initialState = {
   tasks: [ //name "tasks" use in TaskList to map on
     { id: 0, text: "Learn HTML and CSS", completed: true },
@@ -11,7 +14,7 @@ const initialState = {
 
 export const taskReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "SAVE_TASK":
+    case SAVE_TASK:
       return {
         tasks: [...state.tasks, action.payload],
       };
