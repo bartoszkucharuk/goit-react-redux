@@ -1,4 +1,4 @@
-import { SAVE_TASK } from "./actions";
+import { REMOVE_TASK, SAVE_TASK } from "./actions";
 
 
 const initialState = {
@@ -17,6 +17,10 @@ export const taskReducer = (state = initialState, action) => {
     case SAVE_TASK:
       return {
         tasks: [...state.tasks, action.payload],
+      };
+    case REMOVE_TASK:
+      return {
+        tasks: state.tasks.filter((task) => task.id !== action.payload),
       };
     default:
       return state;

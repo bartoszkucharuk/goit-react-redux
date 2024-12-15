@@ -16,13 +16,9 @@ export const saveTask = (text) => ({ // round bracket due to export this const
         completed: false,
         text,
     }
-})
+});
 
-export const removeTask = (text) => ({ // round bracket due to export this const
+export const removeTask = (id) => ({ // round bracket due to export this const
     type: REMOVE_TASK,
-    payload: {
-        id: uuidv4(),
-        completed: false,
-        text,
-    }
-})
+    payload: id,
+});
