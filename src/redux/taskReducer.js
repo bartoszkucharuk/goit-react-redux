@@ -1,4 +1,4 @@
-import { REMOVE_TASK, SAVE_TASK } from "./actions";
+import { REMOVE_TASK, SAVE_TASK, TOGGLE_TASK } from "./actions";
 
 
 const initialState = {
@@ -22,9 +22,19 @@ export const taskReducer = (state = initialState, action) => {
       return {
         tasks: state.tasks.filter((task) => task.id !== action.payload),
       };
+    case TOGGLE_TASK:
+      return {
+        tasks: state.tasks.map((task) => {
+          if (task.id === action.payload) {
+            return {
+              ...task,
+              completed: !task.completed,
+            };
+          }
+          return task;
+        }),
+      };
     default:
       return state;
   }
-
- 
 };
