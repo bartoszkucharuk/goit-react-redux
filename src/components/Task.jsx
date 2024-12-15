@@ -1,5 +1,11 @@
+import { useDispatch } from "react-redux"
+import { removeTask } from "../redux/actions";
 
-export default function Task({task}) {
+export default function Task({ task }) {
+  const dispatch = useDispatch();
+  const handleRemove = () => {
+    dispatch(removeTask(task.id))
+  }
   return (
     <div
       style={{
@@ -7,7 +13,7 @@ export default function Task({task}) {
       }}>
       <input type="checkbox" checked={task.completed} />
       <p>{task.text}</p>
-      <button>remove</button>
+      <button onClick={handleRemove}>remove</button>
     </div>
   )
 }
