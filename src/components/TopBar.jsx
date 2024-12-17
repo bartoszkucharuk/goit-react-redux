@@ -1,9 +1,13 @@
+import Filters from "./Filters";
 import NumberOfTasks from "./NumberOfTasks";
+
 
 export default function TopBar() {
   return (
     <div>
-      <NumberOfTasks />
+          <NumberOfTasks />
+          <hr />
+          <Filters /> 
     </div>
   )
 }

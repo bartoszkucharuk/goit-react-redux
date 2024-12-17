@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-import { selectTasks } from "../redux/selectors";
+import { selectTasks } from "../redux/tasks/selectors";
 
 export default function NumberOfTasks() {
     const tasks = useSelector(selectTasks);

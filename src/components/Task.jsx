@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux"
-import { removeTask, toggleTaskStatus } from "../redux/actions";
+import { removeTask, toggleTaskStatus } from "../redux/tasks/actions";
+
 
 export default function Task({ task }) {
   const dispatch = useDispatch();
