@@ -4,5 +4,5 @@ import { filterReducer } from "./filters/filterReducer";
 
 export const rootReducer = combineReducers({
     tasks: taskReducer,
-    filters: filterReducer,
+    filter: filterReducer,
 });
