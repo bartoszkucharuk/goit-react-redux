@@ -13,11 +13,11 @@ const initialState = [ //name "tasks" use in TaskList to map on
 export const taskReducer = (state = initialState, action) => {
   switch (action.type) {
     case SAVE_TASK:
-      return [...state.tasks, action.payload];
+      return [...state, action.payload];
     case REMOVE_TASK:
-      return state.tasks.filter((task) => task.id !== action.payload);
+      return state.filter((task) => task.id !== action.payload);
     case TOGGLE_TASK:
-      return state.tasks.map((task) => {
+      return state.map((task) => {
         if (task.id === action.payload) {
           return {
             ...task,
