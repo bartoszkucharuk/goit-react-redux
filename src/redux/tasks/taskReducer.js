@@ -1,4 +1,5 @@
-import { REMOVE_TASK, SAVE_TASK, TOGGLE_TASK } from "./actions";
+import { removeTask, saveTask, toggleTaskStatus } from "./actions";
+import { createReducer } from "@reduxjs/toolkit";
 
 
 const initialState = [ //name "tasks" use in TaskList to map on
@@ -10,23 +11,40 @@ const initialState = [ //name "tasks" use in TaskList to map on
   ];
 
 
-export const taskReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case SAVE_TASK:
-      return [...state, action.payload];
-    case REMOVE_TASK:
+// export const taskReducer2 = (state = initialState, action) => {
+//   switch (action.type) {
+//     case saveTask.type:
+//       return [...state, action.payload];
+//     case removeTask.type:
+//       return state.filter((task) => task.id !== action.payload);
+//     case toggleTaskStatus.type:
+//       return state.map((task) => {
+//         if (task.id === action.payload) {
+//           return {
+//             ...task,
+//             completed: !task.completed,
+//           };
+//         }
+//         return task;
+//       });
+//     default:
+//       return state;
+//   }
+// };
+
+export const taskReducer = createReducer(initialState, (builder) => {
+  builder
+    .addCase(saveTask, (state, action) => {
+      state.push(action.payload); // Immer library
+    })
+    .addCase(removeTask, (state, action) => {
       return state.filter((task) => task.id !== action.payload);
-    case TOGGLE_TASK:
-      return state.map((task) => {
+    })
+    .addCase(toggleTaskStatus, (state, action) => {
+      for (const task of state) {
         if (task.id === action.payload) {
-          return {
-            ...task,
-            completed: !task.completed,
-          };
+          task.completed = !task.completed;
         }
-        return task;
-      });
-    default:
-      return state;
-  }
-};
+      }
+    });
+});
