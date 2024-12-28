@@ -6,8 +6,8 @@
 // export const store = createStore(rootReducer, enhancer);
 
 import { configureStore } from "@reduxjs/toolkit";
-import { taskReducer } from "./tasks/taskReducer";
 import { filterReducer } from "./filters/filterSlice";
+import { taskReducer } from "./tasks/taskSlice";
 
 
 export const store = configureStore({

@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import { removeTask, toggleTaskStatus } from "../redux/tasks/actions";
+import { removeTask, toggleTask } from "../redux/tasks/taskSlice";
 
 
 export default function Task({ task }) {
@@ -9,15 +9,15 @@ export default function Task({ task }) {
     dispatch(removeTask(task.id))
   }
 
-  const toggleTask = () => {
-    dispatch(toggleTaskStatus(task.id));
+  const handleToggleTask = () => {
+    dispatch(toggleTask(task.id));
   }
   return (
     <div
       style={{
         display: "flex",
       }}>
-      <input type="checkbox" checked={task.completed} onChange={toggleTask} />
+      <input type="checkbox" checked={task.completed} onChange={handleToggleTask} />
       <p>{task.text}</p>
       <button onClick={handleRemove}>remove</button>
     </div>
