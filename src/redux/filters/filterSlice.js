@@ -10,3 +10,8 @@ export const filterSlice = createSlice({
         },
     },
 });
+
+console.log(filterSlice);
+
+export const { changeStatusFilter } = filterSlice.actions;
+export const filterReducer = filterSlice.reducer;
