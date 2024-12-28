@@ -1,13 +1,14 @@
 import { useDispatch, useSelector } from "react-redux"
 import { selectFilter } from "../redux/filters/selectors"
 import { FILTERS } from "../redux/filters/consts";
-import { changeFilter } from "../redux/filters/actions";
+import { changeStatusFilter } from "../redux/filters/filterSlice";
+
 
 export default function Filters() {
   const dispatch = useDispatch();
   const filter = useSelector(selectFilter);
   const handleClick = (filter) => {
-    dispatch(changeFilter(filter));
+    dispatch(changeStatusFilter(filter));
   };
   return (
     <div>
