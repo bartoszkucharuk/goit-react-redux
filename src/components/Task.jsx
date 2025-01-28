@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux"
 import { removeTask, toggleTask } from "../redux/tasks/taskSlice";
+import styles from "./Task.module.css";
 
 
 export default function Task({ task }) {
@@ -13,12 +14,11 @@ export default function Task({ task }) {
     dispatch(toggleTask(task.id));
   }
   return (
-    <div
-      style={{
-        display: "flex",
-      }}>
-      <input type="checkbox" checked={task.completed} onChange={handleToggleTask} />
-      <p>{task.text}</p>
+    <div className={styles.task}>
+      <div className={styles.taskContents}>
+        <input type="checkbox" checked={task.completed} onChange={handleToggleTask} />
+        <p>{task.text}</p>
+      </div>
       <button onClick={handleRemove}>remove</button>
     </div>
   )

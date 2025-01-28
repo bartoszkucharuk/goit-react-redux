@@ -1,0 +1,18 @@
+.completedTasks {
+    color: green;
+    font-size: 24px;
+}
+
+.activeTasks {
+    color: rgb(24, 96, 253);
+    font-size: 20px;
+}
+
+.activeTasks::after {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 2px;
+    background-color: rgb(24, 96, 253);
+    margin: 20px auto 0;
+}

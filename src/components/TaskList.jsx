@@ -3,6 +3,7 @@ import Task from './Task';
 import { selectTasks } from '../redux/tasks/selectors';
 import { selectFilter } from '../redux/filters/selectors';
 import { FILTERS } from '../redux/filters/consts';
+import styles from "./TaskList.module.css"
 
 export default function TaskList() {
 
@@ -23,7 +24,7 @@ export default function TaskList() {
     };
 
     return (
-        <div>
+        <div className={styles.taskList}>
             {filteredTasks().map((task) =>
                 <Task key={task.id} task={task} />)}
         </div> //props "task" send to Task.jsx

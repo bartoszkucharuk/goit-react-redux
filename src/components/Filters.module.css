@@ -1,0 +1,26 @@
+.filters {
+    display: flex;
+    flex-direction: column;
+}
+
+.filters::after {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 2px;
+    background-color: rgb(24, 96, 253);
+    margin: 40px auto 0;
+}
+
+.p {
+font-size: 20px;
+color: silver;
+margin: 0px auto 20px;
+}
+
+.filterButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}

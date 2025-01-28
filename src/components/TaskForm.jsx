@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { saveTask } from "../redux/tasks/taskSlice";
+import styles from "./TaskForm.module.css"
 
 
 export default function TaskForm() {
@@ -15,8 +16,8 @@ export default function TaskForm() {
 
 
   return (
-      <form onSubmit={handleSubmit}>
-          <input type="text" name="text" />
+      <form onSubmit={handleSubmit} className={styles.form}>
+      <input type="text" name="text" placeholder="add your new task" className={styles.input } />
           <button type="submit">Add task</button>
     </form>
   )
